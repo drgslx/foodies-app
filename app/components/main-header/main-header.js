@@ -4,25 +4,25 @@ import logoImg from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import HeaderBackground from "./header-background";
-
+import NavLink from "./nav-link";
 
 function MainHeader() {
   return (
     <>
-    <HeaderBackground />
+      <HeaderBackground />
       <header className={classes.header}>
         <Link className={classes.logo} href="/">
-          <Image  height={50} width={50} src={logoImg.src} alt="Logo" priority/>
+          <Image height={50} width={50} src={logoImg.src} alt="Logo" priority />
           NextLevel Food
         </Link>
 
         <nav className={classes.nav}>
           <ul>
             <li>
-              <Link href="/meals">Meals</Link>
+              <NavLink href="/meals">Meals</NavLink>
             </li>
             <li>
-              <Link href="/community">Foodies Community</Link>
+              <NavLink href="/community">Community</NavLink>
             </li>
           </ul>
         </nav>
