@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./main-header.module.css";
-import logoImg from "../../../assets/logo.png";
+import logoImg from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import HeaderBackground from "./header-background";
