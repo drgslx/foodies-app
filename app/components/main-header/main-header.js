@@ -24,6 +24,9 @@ function MainHeader() {
             <li>
               <NavLink href="/community">Community</NavLink>
             </li>
+            <li>
+              <NavLink href="/meals/share">Share Meal</NavLink>
+            </li>
           </ul>
         </nav>
       </header>
