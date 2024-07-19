@@ -16,9 +16,12 @@ function mealDetailsPage({ params }) {
   return (
     <>
       <header className={classes.header}>
-        <Link href="/meals">
-          <p className={classes.back}>back</p>
+        <div>
+        <Link className={classes.link} href="/meals">
+          Back 
         </Link>
+        </div>
+        
         <div className={classes.image}>
           <Image src={meal.image} alt={meal.title} fill />
         </div>
