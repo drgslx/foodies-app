@@ -5,6 +5,14 @@ import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
+
+export async function generateMetadata({ params }) {
+  const meal = getMeal(params.mealSlug);
+  return {
+    title: meal.title,
+    description: meal.summary,
+  }
+}
 function mealDetailsPage({ params }) {
   const meal = getMeal(params.mealSlug);
 
