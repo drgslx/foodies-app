@@ -3,7 +3,7 @@ import { getCurrentUser } from "@/actions/getCurrentUser";
 import { redirectIfNotAdmin } from "@/utils/admin";
 import TopNav from "../TopNav";
 import AdminSidebar from "../../AdminSidebar";
-import { getCategoryById } from "@/actions/admin/getCategories";
+import { getCategoryById } from "@/actions/admin/getCourseCategories";
 import UpdateForm from "./UpdateForm";
 
 const page = async ({ params }) => {

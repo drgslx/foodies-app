@@ -20,7 +20,7 @@ export async function getMyCourses() {
           },
         },
         reviews: true,
-        category: {
+        courseCategory: {
           select: {
             name: true,
           },

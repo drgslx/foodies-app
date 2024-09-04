@@ -15,7 +15,7 @@ const CourseCard = ({
 	image,
 	regular_price,
 	before_price,
-	category,
+	courseCategory,
 	lessons,
 	user,
 	reviews,
@@ -39,13 +39,13 @@ const CourseCard = ({
 						<HeartButton courseId={id} currentUser={currentUser} />
 					</div>
 				</div>
-
+{/* 
 				<div className="headingFontFamily absolute top-[20px] left-[20px] z-1 primaryBg text-white font-semibold text-[16px] lg:text-[22px] pt-[14px] pb-[10px] px-[16px] leading-none">
 					<span className="discount-price line-through text-[13px] lg:text-[18px] mr-2 rtl:mr-0 rtl:ml-2">
 						${before_price}
 					</span>{" "}
 					${regular_price}
-				</div>
+				</div> */}
 
 				<div className="bg-[#F0F0F0] py-[30px] sm:py-[35px] px-[20px] sm:px-[25px] -mt-[1px] border border-[#051F0D] group-hover:bg-[#262626] transition duration-500 ease-in-out group-hover:border-[#262626]">
 					<ul className="mb-[20px] space-x-[10px] lg:space-x-[15px] rtl:space-x-reverse">
@@ -55,7 +55,7 @@ const CourseCard = ({
 						</li>
 						<li className="inline-block text-[13px] lg:text-[15px] transition duration-500 ease-in-out group-hover:text-white">
 							<i className="ri-stack-fill primaryText text-[18px] mr-[3px] group-hover:text-white"></i>{" "}
-							{category.name}
+							{courseCategory.name}
 						</li>
 						<li className="inline-block text-[13px] lg:text-[15px] transition duration-500 ease-in-out group-hover:text-white">
 							<i className="ri-book-3-line primaryText text-[18px] mr-[3px] group-hover:text-white"></i>{" "}

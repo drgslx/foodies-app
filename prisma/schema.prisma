@@ -32,7 +32,7 @@ model User {
     accounts           Account[]
     profile            Profile?
     courses            Course[]
-    foods               Food[]
+    foods              Food[]
     favourites         Favourite[]
     enrolments         Enrolment[]
     earnings           Earning[]
@@ -60,7 +60,7 @@ model Account {
     @@index([userId])
 }
 
-model Category {
+model CourseCategory {
     id         Int      @id @default(autoincrement())
     name       String
     slug       String   @unique
@@ -68,8 +68,8 @@ model Category {
     updated_at DateTime @updatedAt
 
     courses Course[]
-
 }
+
 model Course {
     id                     Int        @id @default(autoincrement())
     userId                 Int
@@ -94,7 +94,7 @@ model Course {
     updated_at             DateTime   @updatedAt
 
     user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    category Category @relation(fields: [catId], references: [id], onDelete: Cascade)
+    courseCategory CourseCategory @relation(fields: [catId], references: [id], onDelete: Cascade)
 
     videos     Video[]
     assets     Asset[]
@@ -115,24 +115,23 @@ model FoodCategory {
     updated_at DateTime @updatedAt
 
     foods Food[]
-
 }
 
 model Food {
-    id                     Int        @id @default(autoincrement())
-    userId                 Int
-    foodCatId                  Int
-    title                  String
-    slug                   String     @unique
-    overview               String     @db.Text
-    duration               String
-    calories               Int
-    image                  String
-    created_at             DateTime   @default(now())
-    updated_at             DateTime   @updatedAt
+    id         Int      @id @default(autoincrement())
+    userId     Int
+    foodCatId  Int
+    title      String
+    slug       String   @unique
+    overview   String   @db.Text
+    duration   String
+    calories   Int
+    image      String
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
 
-    user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    category FoodCategory @relation(fields: [foodCatId], references: [id], onDelete: Cascade)
+    user     User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+    foodCategory FoodCategory @relation(fields: [foodCatId], references: [id], onDelete: Cascade)
 
     videos     Video[]
     assets     Asset[]
@@ -142,9 +141,6 @@ model Food {
     @@index([userId, foodCatId])
 }
 
-
-
-
 model Review {
     id         Int      @id @default(autoincrement())
     rating     Int
@@ -153,8 +149,8 @@ model Review {
     user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
     courseId   Int
     course     Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
-     foodId   Int
-    food     Food   @relation(fields: [foodId], references: [id], onDelete: Cascade)
+    foodId     Int
+    food       Food     @relation(fields: [foodId], references: [id], onDelete: Cascade)
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
 
@@ -164,7 +160,7 @@ model Review {
 model Video {
     id           Int      @id @default(autoincrement())
     courseId     Int
-    foodId Int
+    foodId       Int
     group_name   String?
     title        String
     thumb_Image  String?
@@ -176,7 +172,7 @@ model Video {
     updated_at   DateTime @updatedAt
 
     course     Course     @relation(fields: [courseId], references: [id], onDelete: Cascade)
-    food Food  @relation(fields: [foodId], references: [id], onDelete: Cascade)
+    food       Food       @relation(fields: [foodId], references: [id], onDelete: Cascade)
     progresses Progress[]
 
     @@index([courseId])
@@ -185,15 +181,14 @@ model Video {
 model Asset {
     id           Int      @id @default(autoincrement())
     courseId     Int
-    foodId          Int
+    foodId       Int
     lecture_name String
     asset_zip    String
     created_at   DateTime @default(now())
     updated_at   DateTime @updatedAt
 
     course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
-    foods Food @relation(fields: [foodId], references: [id], onDelete: Cascade)
-
+    foods  Food   @relation(fields: [foodId], references: [id], onDelete: Cascade)
 
     @@index([courseId, foodId])
 }
@@ -201,14 +196,13 @@ model Asset {
 model Favourite {
     id         Int      @id @default(autoincrement())
     userId     Int
-    foodId Int 
+    foodId     Int
     courseId   Int
     created_at DateTime @default(now())
 
     user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
     course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
-    food Food @relation(fields: [foodId], references: [id], onDelete: Cascade)
-
+    food   Food   @relation(fields: [foodId], references: [id], onDelete: Cascade)
 
     @@index([courseId, userId])
 }
@@ -245,6 +239,7 @@ model Partner {
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
 }
+
 model Progress {
     id         Int      @id @default(autoincrement())
     finished   Boolean  @default(true)
@@ -259,6 +254,7 @@ model Progress {
 
     @@index([courseId, userId, videoId])
 }
+
 model Enrolment {
     id             Int           @id @default(autoincrement())
     userId         Int
@@ -274,15 +270,14 @@ model Enrolment {
     user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
     course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
 
-
     @@index([courseId, userId])
 }
 
 model Earning {
-    id         Int           @id @default(autoincrement())
-    cost       Float?
-    userId     Int
-    
+    id     Int    @id @default(autoincrement())
+    cost   Float?
+    userId Int
+
     courseId   Int
     status     EARNINGSTATUS @default(Due)
     created_at DateTime      @default(now())
@@ -292,7 +287,6 @@ model Earning {
 
     @@index([courseId, userId])
 }
-
 
 model Coupon {
     id                   Int       @id @default(autoincrement())
@@ -322,7 +316,6 @@ enum ACCESSTIME {
 enum Gender {
     Male
     Female
-    
 }
 
 enum Role {

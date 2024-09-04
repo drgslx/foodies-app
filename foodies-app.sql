@@ -73,7 +73,7 @@ INSERT INTO `Asset` (`id`, `courseId`, `lecture_name`, `asset_zip`, `created_at`
 -- Table structure for table `Category`
 --
 
-CREATE TABLE `Category` (
+CREATE TABLE `CourseCategory` (
   `id` int(11) NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE `Category` (
 -- Dumping data for table `Category`
 --
 
-INSERT INTO `Category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+INSERT INTO `CourseCategory` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 (1, 'Fitness', 'fitness', '2024-05-07 09:36:02.000', '2024-05-07 09:36:02.000'),
 (2, 'General Health', 'general-health', '2024-05-07 09:36:42.000', '2024-05-07 09:36:42.000'),
 (3, 'Sports', 'sports', '2024-05-07 09:37:21.000', '2024-05-07 09:37:21.000'),

@@ -23,7 +23,7 @@ export async function POST(request) {
 	if (cat) {
 		return NextResponse.json(
 			{ message: "foodCategory already exist." },
-			{ status: 402 }
+			{ status: 402 } 
 		);
 	}
 

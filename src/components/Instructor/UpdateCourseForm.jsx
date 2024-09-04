@@ -7,7 +7,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import Input from "@/components/FormHelpers/Input";
 import Nav from "./Nav";
-import CategorySelect from "../FormHelpers/CategorySelect";
+import CourseCategorySelect from "../FormHelpers/CourseCategorySelect";
 import SetPrice from "../FormHelpers/SetPrice";
 import AccessTime from "../FormHelpers/AccessTime";
 import UploadCourseImage from "../FormHelpers/UploadCourseImage";
@@ -25,7 +25,7 @@ const UpdateCourseForm = ({ course }) => {
 		formState: { errors, isValid, isSubmitting },
 	} = useForm({
 		defaultValues: {
-			category: "",
+			courseCategory: "",
 			title: "",
 			overview: "",
 			regular_price: "",
@@ -42,7 +42,7 @@ const UpdateCourseForm = ({ course }) => {
 
 	useEffect(() => {
 		setValue("title", course.title);
-		setValue("category", course.catId);
+		setValue("courseCategory", course.catId);
 		setValue("overview", course.overview);
 		setValue("regular_price", course.regular_price);
 		setValue("before_price", course.before_price);
@@ -57,7 +57,7 @@ const UpdateCourseForm = ({ course }) => {
 
 	const regular_price = watch("regular_price");
 	const before_price = watch("before_price");
-	const category = watch("category");
+	const courseCategory = watch("courseCategory");
 	const access_time = watch("access_time");
 	const image = watch("image");
 
@@ -112,13 +112,13 @@ const UpdateCourseForm = ({ course }) => {
 
 						<div>
 							<label className="text-black text-[16px] md:text-[18px] font-semibold block mb-[10px]">
-								Category
+								courseCategory
 							</label>
 
-							<CategorySelect
-								value={category}
+							<CourseCategorySelect
+								value={courseCategory}
 								onChange={(value) =>
-									setCustomValue("category", value)
+									setCustomValue("courseCategory", value)
 								}
 							/>
 						</div>

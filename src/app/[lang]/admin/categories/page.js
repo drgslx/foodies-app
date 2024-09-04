@@ -3,7 +3,7 @@ import AdminSidebar from "../AdminSidebar";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 import { redirectIfNotAdmin } from "@/utils/admin";
 import TopNav from "./TopNav";
-import { getCategories } from "@/actions/admin/getCategories";
+import { getCategories } from "@/actions/admin/getCourseCategories";
 import Content from "./Content";
 export const dynamic = "force-dynamic";
 

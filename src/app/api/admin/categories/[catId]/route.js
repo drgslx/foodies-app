@@ -23,19 +23,19 @@ export async function POST(request, { params }) {
 		);
 	}
 
-	const cat = await prisma.category.findFirst({
+	const cat = await prisma.courseCategory.findFirst({
 		where: {
 			name: name,
 		},
 	});
 	if (cat) {
 		return NextResponse.json(
-			{ message: "Category already exist." },
+			{ message: "courseCategory already exist." },
 			{ status: 402 }
 		);
 	}
 
-	await prisma.category.update({
+	await prisma.courseCategory.update({
 		where: { id: parseInt(catId) },
 		data: {
 			name,
@@ -43,7 +43,7 @@ export async function POST(request, { params }) {
 	});
 
 	return NextResponse.json(
-		{ message: "Category updated successfully." },
+		{ message: "courseCategory updated successfully." },
 		{ status: 200 }
 	);
 }
@@ -60,12 +60,12 @@ export async function DELETE(request, { params }) {
 		);
 	}
 
-	await prisma.category.delete({
+	await prisma.courseCategory.delete({
 		where: { id: parseInt(catId) },
 	});
 
 	return NextResponse.json(
-		{ message: "Category deleted successfully." },
+		{ message: "courseCategory deleted successfully." },
 		{ status: 200 }
 	);
 }

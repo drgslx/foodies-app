@@ -45,7 +45,7 @@ export async function getCourses(params) {
 			include: {
 				user: true,
 				reviews: true,
-				category: {
+				courseCategory: {
 					select: {
 						name: true,
 					},
@@ -73,7 +73,7 @@ export async function getHomepageCourses() {
 			include: {
 				user: true,
 				reviews: true,
-				category: {
+				courseCategory: {
 					select: {
 						name: true,
 					},
