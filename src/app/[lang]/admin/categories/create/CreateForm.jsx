@@ -19,11 +19,11 @@ const CreateForm = () => {
 	});
 	const onSubmit = async (data) => {
 		try {
-			const url = `/api/admin/categories`;
+			const url = `/api/admin/foodCategories`;
 
 			const response = await axios.post(url, data);
 			toast.success(response.data.message);
-			router.push("/admin/categories");
+			router.push("/admin/foodCategories");
 		} catch (err) {
 			let {
 				response: {

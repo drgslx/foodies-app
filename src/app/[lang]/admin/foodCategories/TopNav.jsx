@@ -11,10 +11,10 @@ const TopNav = () => {
 			<li>
 				<Link
 					className={`${
-						pathname === `/${lang}/admin/food-categories` &&
+						pathname === `/${lang}/admin/foodCategories` &&
 						"text-blue-600 font-medium"
 					}`}
-					href={`/${lang}/admin/food-categories`}
+					href={`/${lang}/admin/foodCategories`}
 				>
 					Food Categories
 				</Link>
@@ -22,10 +22,10 @@ const TopNav = () => {
 			<li>
 				<Link
 					className={`${
-						pathname === `/${lang}/admin/food-categories/create` &&
+						pathname === `/${lang}/admin/foodCategories/create` &&
 						"text-blue-600 font-medium"
 					}`}
-					href={`/${lang}/admin/food-categories/create`}
+					href={`/${lang}/admin/foodCategories/create`}
 				>
 					Create
 				</Link>

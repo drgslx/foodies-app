@@ -19,11 +19,11 @@ const CreateForm = () => {
 	});
 	const onSubmit = async (data) => {
 		try {
-			const url = `/api/admin/categories`;
+			const url = `/api/admin/foodCategories`;
 
 			const response = await axios.post(url, data);
 			toast.success(response.data.message);
-			router.push("/admin/categories");
+			router.push("/admin/foodCategories");
 		} catch (err) {
 			let {
 				response: {
@@ -37,10 +37,10 @@ const CreateForm = () => {
 		<form onSubmit={handleSubmit(onSubmit)} className="space-y-[25px]">
 			<div>
 				<label className="text-black text-[16px] md:text-[18px] font-semibold block mb-[10px]">
-					Category Name
+					Food Category Name
 				</label>
 				<Input
-					placeholder="Category Name"
+					placeholder="Food Category Name"
 					id="name"
 					disabled={isSubmitting}
 					register={register}
