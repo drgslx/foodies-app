@@ -15,7 +15,7 @@ const CourseCard = ({
 	image,
 	regular_price,
 	before_price,
-	category,
+	courseCategory,
 	lessons,
 	user,
 	currentUser,
@@ -64,7 +64,7 @@ const CourseCard = ({
 						</li>
 						<li className="inline-block text-[13px] lg:text-[15px] transition duration-500 ease-in-out group-hover:text-white">
 							<i className="ri-stack-fill primaryText text-[18px] mr-[3px] group-hover:text-white"></i>{" "}
-							{category.name}
+							{courseCategory.name}
 						</li>
 						<li className="inline-block text-[13px] lg:text-[15px] transition duration-500 ease-in-out group-hover:text-white">
 							<i className="ri-book-3-line primaryText text-[18px] mr-[3px] group-hover:text-white"></i>{" "}

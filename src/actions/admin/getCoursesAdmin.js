@@ -24,7 +24,7 @@ export async function getCoursesAdmin() {
             id: true,
           },
         },
-        category: {
+        courseCategory: {
           select: {
             id: true,
             name: true,
@@ -63,7 +63,7 @@ export async function getNewCourses() {
             id: true,
           },
         },
-        category: {
+        courseCategory: {
           select: {
             id: true,
             name: true,

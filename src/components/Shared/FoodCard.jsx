@@ -13,7 +13,7 @@ const CourseCard = ({
 	title,
 	slug,
 	image,
-	category,
+	foodCategory,
 	lessons,
 	user,
 	currentUser,
@@ -62,7 +62,7 @@ const CourseCard = ({
 						</li>
 						<li className="inline-block text-[13px] lg:text-[15px] transition duration-500 ease-in-out group-hover:text-white">
 							<i className="ri-stack-fill primaryText text-[18px] mr-[3px] group-hover:text-white"></i>{" "}
-							{category.name}
+							{foodCategory.name}
 						</li>
 					</ul>
 

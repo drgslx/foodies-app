@@ -8,7 +8,7 @@ const CourseRow = ({
 	title,
 	slug,
 	regular_price,
-	category,
+	courseCategory,
 	user,
 	videos,
 	approved,
@@ -24,7 +24,7 @@ const CourseRow = ({
 
 			<td className="px-6 py-4">${regular_price}</td>
 
-			<td className="px-6 py-4">{category.name}</td>
+			<td className="px-6 py-4">{courseCategory.name}</td>
 
 			<td className="px-6 py-4">{user.name}</td>
 

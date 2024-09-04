@@ -17,7 +17,7 @@ export async function getMyFavourites() {
 					include: {
 						user: true,
 						reviews: true,
-						category: {
+						courseCategory: {
 							select: {
 								name: true,
 							},

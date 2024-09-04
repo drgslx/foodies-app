@@ -14,13 +14,13 @@ export async function GET(request) {
 			);
 		}
 
-		const categories = await prisma.courseCategory.findMany({
+		const courseCategory = await prisma.courseCategory.findMany({
 			orderBy: {
 				name: "asc",
 			},
 		});
 
-		return NextResponse.json(categories);
+		return NextResponse.json(courseCategory);
 	} catch (error) {
 		console.error("Error:", error);
 		return NextResponse.json(

@@ -13,7 +13,7 @@ export async function getSingleCourse(params) {
 					},
 				},
 				videos: true,
-				category: {
+				courseCategory: {
 					select: {
 						id: true,
 						name: true,
@@ -41,12 +41,12 @@ export async function getSingleCourse(params) {
 		});
 
 		const related = await prisma.course.findMany({
-			where: { catId: course.category.id },
+			where: { catId: course.courseCategory.id },
 			take: 4,
 			include: {
 				user: true,
 				reviews: true,
-				category: {
+				courseCategory: {
 					select: {
 						name: true,
 					},

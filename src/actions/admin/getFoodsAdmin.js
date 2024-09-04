@@ -24,7 +24,7 @@ export async function getfoodsAdmin() {
             id: true,
           },
         },
-        category: {
+        foodCategpry: {
           select: {
             id: true,
             name: true,
@@ -63,7 +63,7 @@ export async function getNewfoods() {
             id: true,
           },
         },
-        category: {
+        foodCategpry: {
           select: {
             id: true,
             name: true,

@@ -16,7 +16,7 @@ export async function myLearnings() {
 					include: {
 						user: true,
 						reviews: true,
-						category: true,
+						courseCategpry: true,
 					},
 				},
 			},

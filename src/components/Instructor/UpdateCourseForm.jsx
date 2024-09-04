@@ -28,8 +28,8 @@ const UpdateCourseForm = ({ course }) => {
 			courseCategory: "",
 			title: "",
 			overview: "",
-			regular_price: "",
-			before_price: "",
+			// regular_price: "",
+			// before_price: "",
 			lessons: "",
 			duration: "",
 			image: "",
@@ -149,7 +149,7 @@ const UpdateCourseForm = ({ course }) => {
 								/>
 							</div>
 						</div>
-						<div className="grid gap-[25px] grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+						{/* <div className="grid gap-[25px] grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
 							<div>
 								<label className="text-black text-[16px] md:text-[18px] font-semibold block mb-[10px]">
 									Regular Price
@@ -182,7 +182,7 @@ const UpdateCourseForm = ({ course }) => {
 									}
 								/>
 							</div>
-						</div>
+						</div> */}
 
 						<div className="grid gap-[25px] grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
 							<div>

@@ -39,7 +39,7 @@ export async function getFoods(params) {
 			include: {
 				user: true,
 				reviews: true,
-				category: {
+				foodCategory: {
 					select: {
 						name: true,
 					},
@@ -66,7 +66,7 @@ export async function getHomepagefoods() {
 			include: {
 				user: true,
 				reviews: true,
-				category: {
+				foodCategory: {
 					select: {
 						name: true,
 					},

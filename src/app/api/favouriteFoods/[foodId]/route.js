@@ -13,7 +13,7 @@ export async function POST(request, { params }) {
 		throw new Error("Invalid ID");
 	}
 
-	const favExist = await prisma.favourite.findFirst({
+	const favExist = await prisma.favouriteFood.findFirst({
 		where: {
 			userId: currentUser.id,
 			foodId: parseInt(foodId),
@@ -24,7 +24,7 @@ export async function POST(request, { params }) {
 		throw new Error("Already exist!");
 	}
 
-	const fav = await prisma.favourite.create({
+	const fav = await prisma.favouriteFood.create({
 		data: {
 			userId: currentUser.id,
 			foodId: parseInt(foodId),
@@ -44,7 +44,7 @@ export async function DELETE(request, { params }) {
 		throw new Error("Invalid ID");
 	}
 
-	const findFavorite = await prisma.favourite.findFirst({
+	const findFavorite = await prisma.favouriteFood.findFirst({
 		where: {
 			userId: currentUser.id,
 			foodId: parseInt(foodId),
@@ -53,7 +53,7 @@ export async function DELETE(request, { params }) {
 	if (!findFavorite) {
 		throw new Error("Not found!");
 	}
-	const deletedFavorite = await prisma.favourite.delete({
+	const deletedFavorite = await prisma.favouriteFood.delete({
 		where: {
 			id: findFavorite.foodId,
 		},

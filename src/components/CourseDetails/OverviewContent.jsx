@@ -21,7 +21,7 @@ const OverviewContent = ({
 	image,
 	lessons,
 	user,
-	category,
+	courseCategory,
 	enrolments,
 	reviews,
 }) => {
@@ -54,7 +54,7 @@ const OverviewContent = ({
 						</li>
 						<li className="inline-block text-[13px] lg:text-[17px] font-medium transition duration-500 ease-in-out group-hover:text-white">
 							<i className="ri-stack-fill primaryText text-[17px] lg:text-[22px] mr-[5px] group-hover:text-white"></i>{" "}
-							{category.name}
+							{courseCategory.name}
 						</li>
 						<li className="inline-block text-[13px] lg:text-[17px] font-medium transition duration-500 ease-in-out group-hover:text-white">
 							<i className="ri-book-3-line primaryText text-[17px] lg:text-[22px] mr-[5px] group-hover:text-white"></i>{" "}

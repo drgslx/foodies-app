@@ -21,7 +21,7 @@ export async function getMyfoods() {
           },
         },
         reviews: true,
-        category: {
+        foodCategory: {
           select: {
             name: true,
           },

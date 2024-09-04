@@ -19,7 +19,7 @@ export async function POST(request, { params }) {
 		const body = await request.json();
 
 		const {
-			category,
+			courseCategory,
 			title,
 			overview,
 			regular_price,
@@ -48,7 +48,7 @@ export async function POST(request, { params }) {
 			where: { id: parseInt(courseId) },
 			data: {
 				title,
-				catId: category.value,
+				catId: courseCategory.value,
 				overview,
 				regular_price: parseFloat(regular_price),
 				before_price: parseFloat(before_price),
