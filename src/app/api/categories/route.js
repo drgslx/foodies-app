@@ -14,7 +14,7 @@ export async function GET(request) {
 			);
 		}
 
-		const categories = await prisma.category.findMany({
+		const categories = await prisma.foodCategory.findMany({
 			orderBy: {
 				name: "asc",
 			},

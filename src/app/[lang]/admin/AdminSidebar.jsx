@@ -77,13 +77,13 @@ const AdminSidebar = () => {
 						</li>
 						<li className="pl-4 mb-1">
 							<Link
-								href={`/${lang}/admin/food-categories`}
+								href={`/${lang}/admin/foodCategories`}
 								className={`block p-2 hover:bg-[#262626] hover:text-white ${
-									pathname === `/${lang}/admin/food-categories` &&
+									pathname === `/${lang}/admin/foodCategories` &&
 									"bg-[#262626] text-white italic"
 								}`}
 							>
-								<i className="ri-map-2-fill"></i> Course Categories
+								<i className="ri-map-2-fill"></i> Food Categories
 							</Link>
 						</li>
 						

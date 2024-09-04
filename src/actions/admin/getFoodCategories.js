@@ -28,7 +28,7 @@ export async function getFoodCategoryById(params) {
   const {foodCatId } = params;
 
   try {
-    const foodCategory = await prisma.foodfoodCategory.findUnique({
+    const foodCategory = await prisma.foodCategory.findUnique({
       where: { id: parseInt(foodCatId) },
     });
 

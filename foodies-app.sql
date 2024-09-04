@@ -405,6 +405,11 @@ CREATE TABLE `User` (
 INSERT INTO `User` (`id`, `name`, `email`, `hashedPassword`, `image`, `designation`, `role`, `gender`, `is_instructor`, `email_confirmed`, `email_confirmed_at`, `is_active`, `created_at`, `updated_at`) VALUES
 (8, 'John', 'john@gmail.com', '$2b$12$/cQ4sIzKjZu9amoyHwo44uYkKZXFSKCdJDfUCMjKUjSQ3vsAlEFVm', 'https://res.cloudinary.com/dev-empty/image/upload/v1714980983/vhp4ku4ne9bf8jwfjxsr.jpg', 'React Developer', 'ADMIN', 'Male', 0, 0, NULL, 1, '2024-05-05 17:20:38.286', '2024-05-14 07:02:59.387');
 
+-- set admin privileges to user
+
+UPDATE `User` SET `role` = 'ADMIN' WHERE `User`.`id` = 9;
+
+
 -- --------------------------------------------------------
 
 --
