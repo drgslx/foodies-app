@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-const Content = ({ categories }) => {
+const Content = ({ courseCategories }) => {
 	const router = useRouter();
 	const handleDelete = async (catId) => {
 		try {
@@ -30,7 +30,7 @@ const Content = ({ categories }) => {
 				<thead className="text-xs text-gray-700 uppercase bg-gray-50">
 					<tr>
 						<th scope="col" className="px-6 py-3">
-							Categories
+						course Categories
 						</th>
 						<th scope="col" className="px-6 py-3">
 							Action
@@ -38,8 +38,8 @@ const Content = ({ categories }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{categories.length > 0 ? (
-						categories.map((cat) => (
+					{courseCategories.length > 0 ? (
+						courseCategories.map((cat) => (
 							<CatRow
 								{...cat}
 								key={cat.id}

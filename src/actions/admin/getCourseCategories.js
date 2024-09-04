@@ -2,7 +2,7 @@ import { getCurrentUser } from "../getCurrentUser";
 import prisma from "@/libs/prismadb";
 import { redirect } from "next/navigation";
 
-export async function getCoursecourseCategories() {
+export async function getCourseCategories() {
   const currentUser = await getCurrentUser();
   if (!currentUser) {
     redirect("/");

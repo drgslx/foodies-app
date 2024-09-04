@@ -3,14 +3,14 @@ import AdminSidebar from "../AdminSidebar";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 import { redirectIfNotAdmin } from "@/utils/admin";
 import TopNav from "./TopNav";
-import { getCategories } from "@/actions/admin/getCourseCategories";
+import { getCourseCategories } from "@/actions/admin/getCourseCategories";
 import Content from "./Content";
 export const dynamic = "force-dynamic";
 
 const page = async ({ params }) => {
 	const currentUser = await getCurrentUser();
 	redirectIfNotAdmin(currentUser, params);
-	const { categories } = await getCategories();
+	const { courseCategories } = await getCourseCategories();
 	return (
 		<div className="bg-[#F0F0F0] py-[50px]">
 			<div className="container mx-auto">
@@ -18,7 +18,7 @@ const page = async ({ params }) => {
 					<AdminSidebar />
 					<div className="lg:col-span-3 space-y-[30px]">
 						<TopNav />
-						<Content categories={categories} />
+						<Content courseCategories={courseCategories} />
 					</div>
 				</div>
 			</div>
