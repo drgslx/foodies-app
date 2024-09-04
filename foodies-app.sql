@@ -114,7 +114,7 @@ INSERT INTO `FoodCategory` (`id`, `name`, `slug`, `created_at`, `updated_at`) VA
 (2, 'Brunch', 'brunch', '2024-05-07 09:36:42.000', '2024-05-07 09:36:42.000'),
 (3, 'Lunch', 'lunch', '2024-05-07 09:37:21.000', '2024-05-07 09:37:21.000'),
 (4, 'Dinner', 'dinner', '2024-05-07 09:37:41.000', '2024-05-07 09:37:41.000'),
-(5, 'Snack', 'Snack', '2024-05-07 09:38:05.000', '2024-05-07 09:38:05.000'),
+(5, 'Snack', 'Snack', '2024-05-07 09:38:05.000', '2024-05-07 09:38:05.000');
 
 
 
@@ -329,12 +329,12 @@ CREATE TABLE `Review` (
 -- Dumping data for table `Review`
 --
 
-INSERT INTO `Review` (`id`, `rating`, `comment`, `userId`, `courseId`, `created_at`, `updated_at`) VALUES
-(1, 4, 'Nice course...', 8, 2, '2024-05-09 06:22:54.166', '2024-05-09 06:22:54.166'),
-(2, 2, 'Very Poor....', 8, 2, '2024-05-09 06:23:05.943', '2024-05-09 06:23:05.943'),
-(3, 3, 'Terrible...', 8, 2, '2024-05-09 06:23:17.832', '2024-05-09 06:23:17.832'),
-(4, 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra elementum tellus odio at enim arcu eget tristique sed. Tellus tellus ac orci id est faucibus mattis ultrices gravida.', 8, 2, '2024-05-09 06:23:24.990', '2024-05-09 06:23:24.990'),
-(5, 3, 'Av...', 8, 2, '2024-05-09 06:42:16.357', '2024-05-09 06:42:16.357');
+INSERT INTO `Review` (`id`, `rating`, `comment`, `userId`, `courseId`, `foodId`, `created_at`, `updated_at`) VALUES
+(1, 4, 'Nice course...', 8, 2, 1, '2024-05-09 06:22:54.166', '2024-05-09 06:22:54.166'),
+(2, 2, 'Very Poor....', 8, 2, 2, '2024-05-09 06:23:05.943', '2024-05-09 06:23:05.943'),
+(3, 3, 'Terrible...', 8, 2, 3, '2024-05-09 06:23:17.832', '2024-05-09 06:23:17.832'),
+(4, 5, 'Lorem ultrices gravida.', 8, 2, 4, '2024-05-09 06:23:24.990', '2024-05-09 06:23:24.990'),
+(5, 3, 'Av...', 8, 2, 6, '2024-05-09 06:42:16.357', '2024-05-09 06:42:16.357');  -- Added missing comma
 
 -- --------------------------------------------------------
 

@@ -6,15 +6,15 @@ export async function getFoodCategories() {
   const currentUser = await getCurrentUser();
   if (!currentUser) {
     redirect("/");
-    return { categories: [] }; // Ensure to return an empty array if redirected
+    return { foodCategories: [] }; // Ensure to return an empty array if redirected
   }
 
   try {
-    const categories = await prisma.foodCategory.findMany({});
-    return { categories };
+    const foodCategories = await prisma.foodCategory.findMany({});
+    return { foodCategories };
   } catch (error) {
-    console.error("Error fetching categories:", error);
-    return { categories: [] }; // Return an empty array if there's an error
+    console.error("Error fetching foodCategories:", error);
+    return { foodCategories: [] }; // Return an empty array if there's an error
   }
 }
 
@@ -22,19 +22,19 @@ export async function getFoodCategoryById(params) {
   const currentUser = await getCurrentUser();
   if (!currentUser) {
     redirect("/");
-    return { category: null }; // Ensure to return null if redirected
+    return { foodCategory: null }; // Ensure to return null if redirected
   }
 
-  const { catId } = params;
+  const {foodCatId } = params;
 
   try {
-    const category = await prisma.foodCategory.findUnique({
-      where: { id: parseInt(catId) },
+    const foodCategory = await prisma.foodfoodCategory.findUnique({
+      where: { id: parseInt(foodCatId) },
     });
 
-    return { category };
+    return { foodCategory };
   } catch (error) {
-    console.error("Error fetching category:", error);
-    return { category: [] }; // Return null if there's an error
+    console.error("Error fetching foodCategory:", error);
+    return { foodCategory: [] || null }; // Return null if there's an error
   }
 }

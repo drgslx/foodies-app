@@ -13,7 +13,7 @@ const PageBannerTitle = ({
 	image3,
 }) => {
 	return (
-		<div className="bg-[#FCA120] py-[50px] md:py-[100px] lg:py-[145px]">
+		<div className="bg-[#F3F3F3] py-[24px] md:py-[42px] lg:py-[84px]">
 			<div className="container mx-auto relative">
 				<div className="relative text-center">
 					<h2 className="text-black text-[25px] md:text-[35px] lg:text-[40px] xl:text-[48px] leading-[1.1] mb-[5px]">
@@ -41,7 +41,7 @@ const PageBannerTitle = ({
 					alt="Page banner"
 					width={178}
 					height={100}
-					className="absolute left-[100px] top-[-50px] hidden lg:block"
+					className="absolute left-[42px] top-[-24px] hidden lg:block"
 				/>
 				<Image
 					src={image2}

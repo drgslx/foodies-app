@@ -72,7 +72,18 @@ const AdminSidebar = () => {
 									"bg-[#262626] text-white italic"
 								}`}
 							>
-								<i className="ri-map-2-fill"></i> Categories
+								<i className="ri-map-2-fill"></i> Course Categories
+							</Link>
+						</li>
+						<li className="pl-4 mb-1">
+							<Link
+								href={`/${lang}/admin/food-categories`}
+								className={`block p-2 hover:bg-[#262626] hover:text-white ${
+									pathname === `/${lang}/admin/categories` &&
+									"bg-[#262626] text-white italic"
+								}`}
+							>
+								<i className="ri-map-2-fill"></i> Food Categories
 							</Link>
 						</li>
 					</ul>

@@ -17,6 +17,7 @@ export async function getMyfoods() {
           select: {
             name: true,
             image: true,
+            role: true,
           },
         },
         reviews: true,
